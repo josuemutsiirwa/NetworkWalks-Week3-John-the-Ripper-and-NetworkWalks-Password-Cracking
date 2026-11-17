@@ -1,236 +1,336 @@
 
-# WEEK 3 – PASSWORD CRACKING PROJECTS
+# WEEK 3 — PASSWORD CRACKING PROJECTS
 
-## NetworkWalks Cybersecurity Internship
+<p align="center">
+  <img src="https://img.shields.io/badge/CYBERSECURITY-PRACTICAL%20PROJECT-0A7B83?style=for-the-badge" alt="Cybersecurity Practical Project">
+  <img src="https://img.shields.io/badge/NETWORKWALKS-INTERNSHIP-2563EB?style=for-the-badge" alt="NetworkWalks Internship">
+  <img src="https://img.shields.io/badge/WEEK-03-6F42C1?style=for-the-badge" alt="Week 03">
+  <img src="https://img.shields.io/badge/STATUS-COMPLETED-238636?style=for-the-badge" alt="Project Completed">
+</p>
 
-This repository documents the practical activities completed during **Week 3 of the NetworkWalks Cybersecurity Internship**.
-
-The week's practical work focused on password recovery, PDF hash extraction, wordlist-based password attacks, and the use of password-cracking tools.
-
-Two project modules were completed:
-
-1. **W3-PM1:** Password Cracking with John the Ripper (JTR).
-2. **W3-PM2:** Password Cracking with NetworkWalks Tools.
-
-The practical exercises were conducted using the provided password-protected PDF in an authorized learning environment.
+<p align="center">
+  <a href="https://github.com/josuemutsiirwa">
+    <img src="https://img.shields.io/badge/GitHub-josuemutsiirwa-181717?style=for-the-badge&logo=github" alt="GitHub Profile">
+  </a>
+  <img src="https://img.shields.io/badge/TOOLS-John%20the%20Ripper%20%7C%20Johnny%20%7C%20NetworkWalks-orange?style=for-the-badge" alt="Project Tools">
+</p>
 
 ---
 
-## 1. PROJECT OBJECTIVES
+## 1. PROJECT OVERVIEW
+
+This repository contains the practical projects completed during **Week 3 of the NetworkWalks Cybersecurity Internship**.
+
+The week's activities focused on password recovery and password-cracking techniques using two different approaches:
+
+- **W3-PM1:** Password cracking using John the Ripper and its graphical interface, Johnny.
+- **W3-PM2:** Password cracking using NetworkWalks online tools and an external wordlist.
+
+Both practical exercises involved extracting a password hash from a protected PDF document, performing password-recovery attempts, and verifying the recovered password by successfully opening the document.
+
+The purpose of these exercises was to understand how password hashes, wordlists, and password-cracking tools work in a controlled learning environment.
+
+## 2. PROJECT OBJECTIVES
 
 The main objectives of these practical exercises were to:
 
-- Understand the concept of password hashing and password recovery.
-- Extract password hashes from password-protected PDF documents.
-- Learn how wordlists are used in password-cracking processes.
-- Use John the Ripper and its graphical interface, Johnny.
-- Explore NetworkWalks online Hash Calculator and Password Cracker tools.
-- Compare different password-cracking approaches.
-- Understand the importance of strong passwords and responsible security testing.
+- Understand the concept of password hashing.
+- Extract password hashes from password-protected PDF files.
+- Become familiar with John the Ripper.
+- Configure and use Johnny as a graphical interface for John the Ripper.
+- Understand dictionary-based password attacks.
+- Use built-in and external wordlists.
+- Compare local password-cracking software with online password-cracking tools.
+- Verify password recovery by opening the protected PDF document.
 
----
+## 3. TOOLS AND TECHNOLOGIES
 
-## 2. TOOLS AND TECHNOLOGIES
+The following tools and resources were used during the projects:
 
-The following tools and resources were used:
-
-| Tool | Purpose |
+| Tool / Resource | Purpose |
 |---|---|
-| John the Ripper | Password-cracking engine |
-| Johnny GUI | Graphical interface for John the Ripper |
-| Online Hash Extractor | Extracting password hashes from PDF files |
-| NetworkWalks Hash Calculator | Extracting PDF password hashes |
-| NetworkWalks Password Cracker | Testing password hashes against wordlists |
-| Notepad | Saving and preparing extracted hash data |
-| Web Browser | Accessing online password-cracking tools |
-| Windows | Operating environment |
+| John the Ripper | Password-cracking software |
+| Johnny | Graphical interface for John the Ripper |
+| NetworkWalks Hash Calculator | Extracting password hashes |
+| NetworkWalks Password Cracker | Performing password-recovery attempts |
+| PDF Hash Extractor | Extracting the PDF password hash |
+| JTR Default Password List | External wordlist used during the exercise |
+| Windows | Operating system used for the local JTR practical |
+| Web Browser | Accessing the online tools |
+
+## 4. UNDERSTANDING THE PASSWORD-RECOVERY PROCESS
+
+Both projects followed a general password-recovery process:
+
+```mermaid
+flowchart TD
+    A["Password-Protected PDF"] --> B["Extract Password Hash"]
+    B --> C["Load Hash into Cracking Tool"]
+    C --> D["Select or Upload Wordlist"]
+    D --> E["Perform Password-Cracking Attempt"]
+    E --> F{"Password Recovered?"}
+    F -->|No| G["Try Another Suitable Wordlist"]
+    G --> E
+    F -->|Yes| H["Open Protected PDF"]
+    H --> I["Verify Successful Password Recovery"]
+```
+
+A password hash is a representation of a password produced by a hashing process. Password-cracking tools can test candidate passwords against the hash to determine whether a candidate matches the original password.
+
+A wordlist contains possible password candidates that a cracking tool can test during a dictionary-based attack.
 
 ---
 
-# 3. W3-PM1: PASSWORD CRACKING WITH JOHN THE RIPPER
+# 5. W3-PM1 — PASSWORD CRACKING WITH JOHN THE RIPPER
 
-## 3.1 Introduction
+## 5.1 Project Description
 
-This practical focused on recovering the password of a provided password-protected PDF using John the Ripper and its graphical interface, Johnny.
+The first practical exercise focused on using **John the Ripper (JTR)** to recover the password of a protected PDF document.
 
-The exercise involved extracting the PDF password hash, saving it in a text file, loading it into Johnny, and performing a password-cracking attack.
+The exercise was performed locally on Windows. Johnny was used as the graphical interface to configure and manage the password-cracking process.
 
-## 3.2 Practical Procedure
+## 5.2 Tools Used
 
-The following steps were performed:
+- John the Ripper
+- Johnny GUI
+- PDF Hash Extractor
+- Notepad
+- Password-protected PDF document
 
-1. Downloaded the provided password-protected PDF.
-2. Downloaded and extracted John the Ripper for Windows.
-3. Verified that John the Ripper was working.
-4. Installed and launched Johnny GUI.
-5. Configured Johnny to use the John the Ripper executable.
-6. Extracted the PDF password hash using an online PDF hash extractor.
-7. Saved the extracted hash in a file named `hash1.txt`.
-8. Loaded the hash into Johnny.
-9. Started the password-cracking attack.
-10. Used the recovered password to unlock the PDF.
+## 5.3 Practical Procedure
 
-## 3.3 Screenshot Evidence
+The following steps were completed:
 
-The following screenshots document the practical process.
+1. Downloaded the password-protected PDF document.
+2. Launched Johnny.
+3. Configured Johnny with the location of the John the Ripper executable.
+4. Used a PDF hash extraction tool to extract the password hash.
+5. Saved the extracted hash in a text file named `hash1.txt`.
+6. Loaded the hash file into Johnny.
+7. Configured and started the password-cracking attack.
+8. Opened the PDF document after recovering its password to verify the result.
 
-### Step 1: Downloading the Protected PDF
+## 5.4 Screenshots and Evidence
+
+### Step 1 — PDF Downloaded
+
+The protected PDF document was downloaded and prepared for the practical exercise.
 
 ![PDF Downloaded](W3-PM1-John-the-Ripper/01-pdf-downloaded.png)
 
-### Step 2: John the Ripper Launch
+### Step 2 — Johnny Launched
 
-![John the Ripper Launch](W3-PM1-John-the-Ripper/02-johnny-launch.png)
+Johnny was launched to provide a graphical interface for working with John the Ripper.
 
-### Step 3: Johnny Configuration
+![Johnny Launch](W3-PM1-John-the-Ripper/02-johnny-launch.png)
+
+### Step 3 — Johnny Configuration
+
+The John the Ripper executable location was configured in Johnny.
 
 ![Johnny Configuration](W3-PM1-John-the-Ripper/03-johnny-configuration.png)
 
-### Step 4: PDF Hash Extraction
+### Step 4 — PDF Hash Extraction
+
+The password hash was extracted from the protected PDF using a PDF hash extraction tool.
 
 ![PDF Hash Extraction](W3-PM1-John-the-Ripper/04-pdf-hash-extraction.png)
 
-### Step 5: Saving the Hash in Notepad
+### Step 5 — Hash Saved in Notepad
 
-![Hash Saved](W3-PM1-John-the-Ripper/05-hash-saved-in-notepad.png)
+The extracted hash was saved in a text file named `hash1.txt`.
 
-### Step 6: Loading the Hash into Johnny
+![Hash Saved in Notepad](W3-PM1-John-the-Ripper/05-hash-saved-in-notepad.png)
 
-![Hash Loaded](W3-PM1-John-the-Ripper/06-hash-loaded-in-johnny.png)
+### Step 6 — Hash Loaded into Johnny
 
-### Step 7: Password-Cracking Results
+The saved hash file was loaded into Johnny in preparation for the password-cracking attempt.
+
+![Hash Loaded in Johnny](W3-PM1-John-the-Ripper/06-hash-loaded-in-johnny.png)
+
+### Step 7 — Attack Results
+
+The password-cracking process was executed using the configured tool.
 
 ![Attack Results](W3-PM1-John-the-Ripper/07-attack-results.png)
 
-### Step 8: Successfully Unlocking the PDF
+### Step 8 — PDF Successfully Unlocked
 
-![PDF Unlocked](W3-PM1-John-the-Ripper/08-pdf-successfully-unlocked.png)
+The recovered password was used to open the protected PDF document, confirming successful password recovery.
+
+![PDF Successfully Unlocked](W3-PM1-John-the-Ripper/08-pdf-successfully-unlocked.png)
+
+## 5.5 Project Outcome
+
+The practical exercise demonstrated how John the Ripper and Johnny can be used to perform password-recovery operations against a password-protected PDF.
+
+The successful opening of the PDF document provided evidence that the password-recovery process had worked.
 
 ---
 
-# 4. W3-PM2: PASSWORD CRACKING WITH NETWORKWALKS TOOLS
+# 6. W3-PM2 — PASSWORD CRACKING WITH NETWORKWALKS TOOLS
 
-## 4.1 Introduction
+## 6.1 Project Description
 
-This practical focused on using two online tools provided by NetworkWalks:
+The second practical exercise focused on using NetworkWalks online tools to extract and crack the password hash of a protected PDF document.
 
-- **Hash Calculator:** Used to extract the password hash from the protected PDF.
-- **Password Cracker:** Used to test possible passwords against the extracted hash.
+Unlike the first project, which used locally installed software, this exercise used browser-based tools provided by NetworkWalks.
 
-Unlike the first practical, this exercise did not require installing password-cracking software locally.
+The practical also demonstrated the difference between using a built-in wordlist and uploading an external wordlist.
 
-## 4.2 Practical Procedure
+## 6.2 Tools Used
 
-The following steps were performed:
+- NetworkWalks Hash Calculator
+- NetworkWalks Password Cracker
+- JTR Default Password List
+- Web Browser
+- Password-protected PDF document
 
-1. Downloaded the provided password-protected PDF.
+## 6.3 Practical Procedure
+
+The following steps were completed:
+
+1. Downloaded the protected PDF document.
 2. Opened the NetworkWalks Hash Calculator.
-3. Uploaded the PDF and generated its password hash.
-4. Copied the complete extracted hash.
+3. Uploaded the PDF document and extracted its password hash.
+4. Copied the extracted hash, which began with `$pdf$`.
 5. Opened the NetworkWalks Password Cracker.
-6. Submitted the hash using the built-in wordlist.
-7. Observed that the built-in wordlist did not recover the password and returned an unsuccessful result.
-8. Uploaded an external wordlist named `JTR_default_password.txt`, containing 3,556 words.
-9. Started another password-cracking attempt using the external wordlist.
-10. Successfully recovered the password.
-11. Used the recovered password to open the protected PDF.
+6. Loaded the extracted hash into the password-cracking tool.
+7. Attempted password recovery using the built-in wordlist.
+8. Observed that the built-in wordlist attempt was unsuccessful.
+9. Downloaded and uploaded the external wordlist `JTR_default_password.txt`, containing 3,556 words.
+10. Started another password-cracking attempt using the external wordlist.
+11. Recovered the password and used it to open the protected PDF document.
 
-## 4.3 Screenshot Evidence
+## 6.4 Screenshots and Evidence
 
-### Step 1: Downloading the Protected PDF
+### Step 1 — PDF Downloaded
+
+The password-protected PDF document was downloaded for the exercise.
 
 ![PDF Downloaded](W3-PM2-NetworkWalks-Tools/001-pdf-downloaded.png)
 
-### Step 2: Opening the Hash Calculator
+### Step 2 — Hash Calculator Opened
 
-![Hash Calculator](W3-PM2-NetworkWalks-Tools/002-hash-calculator-opened.png)
+The NetworkWalks Hash Calculator was opened to prepare for hash extraction.
 
-### Step 3: Extracting the PDF Hash
+![Hash Calculator Opened](W3-PM2-NetworkWalks-Tools/002-hash-calculator-opened.png)
+
+### Step 3 — PDF Hash Extracted
+
+The PDF document was uploaded, and its password hash was extracted.
 
 ![PDF Hash Extracted](W3-PM2-NetworkWalks-Tools/003-pdf-hash-extracted.png)
 
-### Step 4: Opening the Password Cracker
+### Step 4 — Password Cracker Opened
 
-![Password Cracker](W3-PM2-NetworkWalks-Tools/004-password-cracker-opened.png)
+The NetworkWalks Password Cracker was opened to begin the password-recovery process.
 
-### Step 5: Built-in Wordlist Attempt
+![Password Cracker Opened](W3-PM2-NetworkWalks-Tools/004-password-cracker-opened.png)
 
-![Built-in Wordlist Unsuccessful](W3-PM2-NetworkWalks-Tools/005-builtin-wordlist-attack-unsuccessful.png)
+### Step 5 — Built-in Wordlist Attempt Unsuccessful
 
-### Step 6: Uploading an External Wordlist
+The first password-cracking attempt was performed using the built-in wordlist. The attempt did not recover the password.
+
+![Built-in Wordlist Attempt Unsuccessful](W3-PM2-NetworkWalks-Tools/005-builtin-wordlist-attack-unsuccessful.png)
+
+### Step 6 — External Wordlist Uploaded
+
+An external wordlist named `JTR_default_password.txt`, containing 3,556 words, was uploaded for another attempt.
 
 ![External Wordlist Uploaded](W3-PM2-NetworkWalks-Tools/006-external-wordlist-uploaded.png)
 
-### Step 7: Successful Password Recovery
+### Step 7 — Password Successfully Cracked
+
+The password-cracking attempt using the external wordlist successfully recovered the password.
 
 ![Password Successfully Cracked](W3-PM2-NetworkWalks-Tools/007-password-successfully-cracked.png)
 
-### Step 8: Successfully Unlocking the PDF
+### Step 8 — PDF Successfully Unlocked
 
-![PDF Unlocked](W3-PM2-NetworkWalks-Tools/008-pdf-successfully-unlocked.png)
+The recovered password was entered, and the protected PDF document opened successfully.
+
+![PDF Successfully Unlocked](W3-PM2-NetworkWalks-Tools/008-pdf-successfully-unlocked.png)
+
+## 6.5 Project Outcome
+
+The practical exercise demonstrated how online password-cracking tools can be used to extract password hashes and perform dictionary-based password-recovery attempts.
+
+It also showed that a built-in wordlist may not contain the required password, while a different wordlist may successfully recover it.
 
 ---
 
-# 5. COMPARISON OF THE TWO PRACTICALS
+# 7. COMPARISON OF THE TWO PROJECTS
 
-| Feature | W3-PM1: John the Ripper | W3-PM2: NetworkWalks |
+Both projects focused on recovering the password of a protected PDF document, but they used different tools and environments.
+
+| Comparison | W3-PM1 | W3-PM2 |
 |---|---|---|
-| Main tool | John the Ripper | NetworkWalks tools |
-| Interface | Johnny GUI | Web browser |
-| Hash extraction | Online PDF hash extractor | NetworkWalks Hash Calculator |
-| Password recovery | John the Ripper engine | NetworkWalks Password Cracker |
-| Wordlists | John the Ripper attack configuration | Built-in and external wordlists |
-| Installation | Required | Not required |
+| Approach | Local password cracking | Online password cracking |
+| Main Tool | John the Ripper | NetworkWalks Password Cracker |
+| Interface | Johnny GUI | Web interface |
+| Hash Extraction | PDF Hash Extractor | NetworkWalks Hash Calculator |
+| Wordlist | Configured cracking attack | Built-in and external wordlists |
+| Environment | Windows | Web Browser |
+| Verification | PDF opened successfully | PDF opened successfully |
 
-Both practicals demonstrated how password recovery can be performed using extracted password hashes and candidate passwords.
+## 8. KEY LEARNING OUTCOMES
 
----
+Through these practical exercises, I gained experience in the following areas:
 
-# 6. KEY LEARNING OUTCOMES
-
-Through these practical exercises, I gained experience in:
-
-- Understanding the relationship between password hashing and password recovery.
+- Understanding password hashes and their role in password protection.
 - Extracting password hashes from protected PDF documents.
-- Working with John the Ripper and Johnny GUI.
-- Configuring a password-cracking environment.
-- Understanding how wordlists are used during password attacks.
-- Comparing built-in and external wordlists.
-- Interpreting unsuccessful and successful password-cracking results.
-- Understanding why password complexity matters in information security.
+- Using John the Ripper for password-recovery exercises.
+- Configuring Johnny to work with John the Ripper.
+- Loading password hashes into cracking tools.
+- Understanding dictionary-based password attacks.
+- Working with built-in and external wordlists.
+- Understanding why one wordlist may fail while another succeeds.
+- Comparing locally installed security tools with online tools.
+- Verifying password recovery by opening a protected document.
 
----
+## 9. ETHICAL CONSIDERATIONS
 
-# 7. ETHICAL CONSIDERATIONS
+Password-cracking tools are legitimate cybersecurity tools when used for authorized security testing, password recovery, and educational purposes.
 
-Password-cracking techniques can be used for legitimate security testing and educational purposes, but they can also be misused.
+However, they can also be misused if applied to systems or documents without permission.
 
-All activities documented in this repository were conducted as part of an authorized cybersecurity training exercise using the provided laboratory PDF.
+All activities documented in this repository were performed as part of a cybersecurity learning exercise.
 
-These techniques should only be applied to systems, files, and resources for which explicit authorization has been granted.
+These techniques should only be applied to files, systems, and environments that the user owns or has explicit authorization to test.
 
----
+## 10. REFERENCES AND LEARNING RESOURCES
 
-# 8. REFERENCES AND LEARNING RESOURCES
+The following resources were used during the practical exercises:
 
-1. **Openwall – John the Ripper:**  
+1. **John the Ripper — Official Website**  
    https://www.openwall.com/john/
 
-2. **NetworkWalks – Hash Calculator:**  
+2. **NetworkWalks Hash Calculator**  
    https://networkwalks.com/hash-calculator/
 
-3. **NetworkWalks – Password Cracker:**  
+3. **NetworkWalks Password Cracker**  
    https://networkwalks.com/password-cracker/
 
-4. **NetworkWalks – Password Cracking with NetworkWalks Tools:**  
+4. **NetworkWalks Password Cracking Project Instructions**  
    https://networkwalks.com/project-task-lab-password-cracking-with-networkwalks-tools/
 
-5. **Online Hash Crack – PDF Hash Extractor:**  
+5. **Online PDF Hash Extractor**  
    https://www.onlinehashcrack.com/tools-pdf-hash-extractor.php
+
+## 11. CONCLUSION
+
+Week 3 provided practical experience with password-recovery techniques using both locally installed and online cybersecurity tools.
+
+The two projects demonstrated the importance of password hashes, wordlists, and dictionary-based attacks in understanding password security.
+
+By completing these exercises, I gained practical familiarity with John the Ripper, Johnny, and NetworkWalks password-cracking tools.
+
+These activities strengthened my understanding of basic password security concepts and provided a foundation for further learning in cybersecurity and ethical penetration testing.
 
 ---
 
-# 9. AUTHOR INFORMATION
+## 12. AUTHOR INFORMATION
 
 **Name:** MUTSIIRWA MATEMBERA JOSUE
 
@@ -238,16 +338,8 @@ These techniques should only be applied to systems, files, and resources for whi
 
 **Batch:** B084
 
-**Week:** 03
+**Project:** Week 3 — Password Cracking Projects
 
-**Project:** Password Cracking with John the Ripper and NetworkWalks Tools
+**GitHub:** [github.com/josuemutsiirwa](https://github.com/josuemutsiirwa)
 
----
-
-## CONCLUSION
-
-Week 3 provided practical exposure to password recovery techniques through two different approaches: John the Ripper and NetworkWalks online password-cracking tools.
-
-The exercises improved my understanding of password hashes, wordlists, password recovery workflows, and the importance of password security.
-
-This repository serves as documentation and evidence of the practical activities completed during the third week of the cybersecurity internship.
+**LinkedIn:** [View my LinkedIn Profile](YOUR_LINKEDIN_URL)
