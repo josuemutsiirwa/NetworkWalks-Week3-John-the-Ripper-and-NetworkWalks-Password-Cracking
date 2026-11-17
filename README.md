@@ -1,6 +1,7 @@
 
 # WEEK 3 — PASSWORD CRACKING PROJECTS
 
+
 <p align="center">
   <img src="https://img.shields.io/badge/CYBERSECURITY-PRACTICAL%20PROJECT-0A7B83?style=for-the-badge" alt="Cybersecurity Practical Project">
   <img src="https://img.shields.io/badge/NETWORKWALKS-INTERNSHIP-2563EB?style=for-the-badge" alt="NetworkWalks Internship">
@@ -12,8 +13,12 @@
   <a href="https://github.com/josuemutsiirwa">
     <img src="https://img.shields.io/badge/GitHub-josuemutsiirwa-181717?style=for-the-badge&logo=github" alt="GitHub Profile">
   </a>
+  <a href="https://www.linkedin.com/in/josue-matembera-37a269407/">
+    <img src="https://img.shields.io/badge/LinkedIn-Connect%20with%20me-0A66C2?style=for-the-badge&logo=linkedin" alt="LinkedIn Profile">
+  </a>
   <img src="https://img.shields.io/badge/TOOLS-John%20the%20Ripper%20%7C%20Johnny%20%7C%20NetworkWalks-orange?style=for-the-badge" alt="Project Tools">
 </p>
+
 
 ---
 
@@ -342,4 +347,4 @@ These activities strengthened my understanding of basic password security concep
 
 **GitHub:** [github.com/josuemutsiirwa](https://github.com/josuemutsiirwa)
 
-**LinkedIn:** [View my LinkedIn Profile](YOUR_LINKEDIN_URL)
+**LinkedIn:** [View my LinkedIn Profile](https://www.linkedin.com/in/josue-matembera-37a269407/)
